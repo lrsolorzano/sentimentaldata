@@ -3,7 +3,7 @@
 #include <fcntl.h>
 #include <strings.h>
 
-#define BUF_SIZE 	128
+#define BUF_SIZE 	90
 #define TRUE 1
 #define FALSE 0
 
@@ -50,7 +50,7 @@ int main(int argc, char *argv[]){
 	// loop reading the file 
 	int done = FALSE;
 	int counter =  0; 
-	while (!done or counter > 1000){
+	while (!done && counter < 1000){
 		bzero(buffer, BUF_SIZE);
 		n = read(fd1, &buffer, BUF_SIZE);
 		if (n == 0){
